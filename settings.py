@@ -30,8 +30,8 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 
-MEDIA_ROOT = os.path.join(PROJECT_ROOT_PATH, 'site_media')
-MEDIA_URL = '/site_media'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT_PATH, 'media')
+MEDIA_URL = '/media'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'p#rm2q#-pn)+%y=l=o(6py1rf%2p@cm*$1y1950rnl6n6qcstl'
