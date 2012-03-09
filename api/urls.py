@@ -8,6 +8,7 @@ empenho_resource = Resource(EmpenhoHandler)
 
 urlpatterns = patterns('',
    url(r'^pedidos$', pedido_resource),
+   url(r'^orcamentos$', orcamento_resource),
    url(r'^orcamento$', orcamento_resource),
    url(r'^empenhos$', empenho_resource),
 )
