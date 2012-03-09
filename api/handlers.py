@@ -28,7 +28,7 @@ class PedidoHandler(BaseHandler):
         coordenacao = Setor.objects.get(pk=request.POST.get('coordenacao'))
         novo_pedido = self.model(coordenacao=coordenacao, descricao=request.POST.get('descricao'))
         novo_pedido.save()
-        return "Criado\n"
+        return novo_pedido
 
 class OrcamentoHandler(BaseHandler):
 
@@ -39,7 +39,7 @@ class OrcamentoHandler(BaseHandler):
         pedido = Pedido.objects.get(pk=request.POST.get('pedido'))
         novo_orcamento = self.model(pedido=pedido, valor_total=request.POST.get('valor_total'))
         novo_orcamento.save()
-        return "Criado\n"
+        return novo_orcamento
 
 
 class EmpenhoHandler(BaseHandler):
@@ -51,4 +51,4 @@ class EmpenhoHandler(BaseHandler):
         orcamento = Orcamento.objects.get(pk=request.POST.get('orcamento'))
         novo_empenho = self.model(orcamento=orcamento, valor=request.POST.get('valor'))
         novo_empenho.save()
-        return "Criado\n"
+        return novo_empenho
