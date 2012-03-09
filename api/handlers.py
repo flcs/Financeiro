@@ -1,6 +1,23 @@
 from piston.handler import BaseHandler
 from financeiro.empenho.models import Setor, Pedido, Orcamento, Empenho
 
+import urllib2
+import json
+
+class SetorHandler(BaseHandler):
+
+    model = Setor
+
+    def create(self, request, *args, **kwargs):
+        host = request.POST.get('host')
+        porta = request.POST.get('porta')
+        pk_setor = request.POST.get('setor')
+        dados = urllib2.urlopen("http://%s:%s/api/setor/%s/json"%(host,porta,pk_setor))
+        nome = json.load(dados)
+        novo_setor = self.model(nome=nome)
+        novo_setor.save()
+        return novo_setor
+
 
 class PedidoHandler(BaseHandler):
 
