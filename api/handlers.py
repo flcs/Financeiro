@@ -49,6 +49,6 @@ class EmpenhoHandler(BaseHandler):
 
     def create(self, request, *args, **kwargs):
         orcamento = Orcamento.objects.get(pk=request.POST.get('orcamento'))
-        novo_empenho = self.model(orcamento=orcamento, valor=request.POST.get('valor_total'))
+        novo_empenho = self.model(orcamento=orcamento, valor=request.POST.get('valor'))
         novo_empenho.save()
         return "Criado\n"
