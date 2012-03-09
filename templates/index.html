@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns= "http://www.w3.org/1999/xhtml" xml:lang="pt-br" lang="pt-br">
+    <head>
+        <title>
+            Módulo Financeiro
+        </title>
+    </head>
+    <body>
+    <h2>Manual de utilização do módulo financeiro</h2>
+    <ul>
+        <li><h4>Cadastrar novo setor<a href="/api/setores/">    URL</a></h4></li>
+        <p>Através do metodo POST informe qual sera o host e a porta do servidor que 
+        fornecerá os dados do setor, além do id do setor desejado.</br><br>
+        Exemplo:<br/>
+        curl -i -H "Accept: application/json" -X POST -d "host=localhost&porta=8000&setor=2" http://localhost:8000/api/setores</p>
+        <br><br><li><h4>Criar novo pedido <a href="/api/pedidos">   URL</a></h4></li>
+        <p>Através do metodo POST informe id do setor desejado e descrição a que o
+        pedido se refere.</br><br>
+        Exemplo:<br/>
+        curl -i -H "Accept: application/json" -X POST -d "coordenacao=1&descricao=pagamento bolsas" http://localhost:8000/api/pedidos</p>
+        <br><br><li><h4>Criar novo orçamento<a href="/api/orcamentos"> URL</a></h4></li>
+        <p>Através do metodo POST informe id do pedido desejado e valor total que 
+        possui o orçamento.<br/><br>
+        Exemplo:<br/>
+        curl -i -H "Accept: application/json" -X POST -d "pedido=1&valor_total=12000" http://localhost:8000/api/orcamentos</p>
+        <br><br><li><h4>Criar empenho<a href="/api/servidor/">  URL</a></h4></li>
+        <p>Através do metodo POST informe id do orcamento desejado e valor que será
+        depositado no empenho.<br/><br>
+        Exemplo:<br/>
+        curl -i -H "Accept: application/json" -X POST -d "orcamento=1&valor=1200" http://localhost:8000/api/empenhos</p>
+    </ul>
+    </body>
+</html>
